@@ -1,86 +1,46 @@
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { View, Platform,StyleSheet, Text, View  } from 'react-native';
-import { useLinkBuilder, useTheme } from '@react-navigation/native';
-import { Text, PlatformPressable } from '@react-navigation/elements';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { moderateScale } from '../styles/responsiveSize';
+import { COLORS } from '../styles/colors';
+import Alltask from '../screens/Alltask';
+import Completed from '../screens/Completed';
 const Tab = createBottomTabNavigator();
-
-function HomeScreen() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
-      </View>
-    );
-  }
-  function user() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>User Screen</Text>
-      </View>
-    );
-  }
-
-  function MyTabBar({ state, descriptors, navigation }) {
-    const { colors } = useTheme();
-    const { buildHref } = useLinkBuilder();
-  
-    return (
-      <View style={{ flexDirection: 'row' }}>
-        {state.routes.map((route, index) => {
-          const { options } = descriptors[route.key];
-          const label =
-            options.tabBarLabel !== undefined
-              ? options.tabBarLabel
-              : options.title !== undefined
-                ? options.title
-                : route.name;
-  
-          const isFocused = state.index === index;
-  
-          const onPress = () => {
-            const event = navigation.emit({
-              type: 'tabPress',
-              target: route.key,
-              canPreventDefault: true,
-            });
-  
-            if (!isFocused && !event.defaultPrevented) {
-              navigation.navigate(route.name, route.params);
-            }
-          };
-  
-          const onLongPress = () => {
-            navigation.emit({
-              type: 'tabLongPress',
-              target: route.key,
-            });
-          };
-  
-          return (
-            <PlatformPressable
-              href={buildHref(route.name, route.params)}
-              accessibilityState={isFocused ? { selected: true } : {}}
-              accessibilityLabel={options.tabBarAccessibilityLabel}
-              testID={options.tabBarButtonTestID}
-              onPress={onPress}
-              onLongPress={onLongPress}
-              style={{ flex: 1 }}
-            >
-              <Text style={{ color: isFocused ? colors.primary : colors.text }}>
-                {label}
-              </Text>
-            </PlatformPressable>
-          );
-        })}
-      </View>
-    );
-  }
 const Bottom = () => {
   return (
-    <Tab.Navigator   tabBar={(props) => <MyTabBar {...props} />}>
-      <Tab.Screen name="Home" component={HomeScreen}  />
-      <Tab.Screen name="user" component={user} />
+    <Tab.Navigator screenOptions={{
+        tabBarStyle:{backgroundColor:COLORS.whiteColor,height:moderateScale(70)},
+        tabBarLabelStyle:{color:COLORS.primary,paddingVertical:moderateScale(8),fontWeight:'500'}, 
+        tabBarActiveTintColor:COLORS.primary
+         
+    }}
+    >
+        
+      <Tab.Screen name="All Task" component={Alltask} options={{
+        tabBarIcon:({color,size})=>(
+            <MaterialIcons name="format-list-bulleted"  size={moderateScale(25)} color={color} />
+        ),
+       
+        headerRight:()=>(
+            <MaterialIcons
+              name="calendar-month"
+              size={moderateScale(35)}
+              color={COLORS.whiteColor}
+              style={{ marginRight: moderateScale(10), }}
+              onPress={() => alert('Search Pressed')}
+            />
+        ),
+        headerStyle:{backgroundColor:COLORS.primary,height:moderateScale(80)},
+        title:'TODO APP',
+        headerTitleStyle:{color:COLORS.whiteColor,fontSize:22,fontWeight:'600'}
+        
+      }}/>
+      <Tab.Screen name="Completed" component={Completed} options={{
+        tabBarIcon:({color,size})=>(
+            <MaterialIcons name='check'  size={moderateScale(25)} color={color}/>
+        )
+      }} />
     </Tab.Navigator>
   )
 }

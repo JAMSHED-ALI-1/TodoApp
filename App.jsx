@@ -8,7 +8,7 @@ import { StatusBar } from 'react-native';
 export default function App() {
   return (
     <NavigationContainer >
-      <StatusBar barStyle={'dark-content'} backgroundColor={'red'}/>
+      <StatusBar barStyle={'dark-content'} backgroundColor={'pink'}/>
       <Rootstack />
     </NavigationContainer>
   );

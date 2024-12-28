@@ -30,9 +30,9 @@ export const COLORS={
     blackOpacity80: 'rgba(0,0,0,0.8)',
     blackOpacity90: 'rgba(0,0,0,0.9)',
 
-    whiteColor: '#FFFFFFFF',
+    whiteColor: '#FFF',
     whiteColorOpacity20: 'rgba(255, 255, 255, 0.2)',
     whiteColorOpacity40: 'rgba(255, 255, 255, 0.4)',
     whiteColorOpacity50: 'rgba(255, 255, 255, 0.5)',
-    whiteColorO
+  
 }
