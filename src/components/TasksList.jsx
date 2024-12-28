@@ -3,18 +3,20 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {COLORS} from '../styles/colors';
 
-const TasksList = ({data}) => {
+const TasksList = ({data, viewOnly}) => {
   const renderList = ({item}) => (
     <View style={styles.iconRow}>
       <View>
         <Text style={styles.title}>Title</Text>
         <Text style={styles.desc}>Desc</Text>
       </View>
-      <View style={{...styles.iconRow, gap: '12%'}}>
-        <Icon name="edit" size={25} color={COLORS.primary} />
-        <Icon name="delete" size={25} color={COLORS.primary} />
-        <Icon name="check" size={25} color={COLORS.primary} />
-      </View>
+      {viewOnly ? null : (
+        <View style={{...styles.iconRow, gap: '10%'}}>
+          <Icon name="edit" size={20} color={COLORS.primary} />
+          <Icon name="delete" size={20} color={COLORS.primary} />
+          <Icon name="checkcircleo" size={20} color={COLORS.primary} />
+        </View>
+      )}
     </View>
   );
 
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: 15,
     paddingVertical: 10,
     backgroundColor: '#fff',
     borderRadius: 10,
