@@ -2,8 +2,10 @@ import {FlatList, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {COLORS} from '../styles/colors';
+import { useNavigation } from '@react-navigation/native';
 
-const TasksList = ({data, viewOnly}) => {
+const TasksList = ({data,viewOnly}) => {
+  const navigation=useNavigation()
   const renderList = ({item}) => (
     <View style={styles.iconRow}>
       <View>
@@ -12,7 +14,7 @@ const TasksList = ({data, viewOnly}) => {
       </View>
       {viewOnly ? null : (
         <View style={{...styles.iconRow, gap: '10%'}}>
-          <Icon name="edit" size={20} color={COLORS.primary} />
+          <Icon name="edit" size={20} color={COLORS.primary} onPress={()=>navigation.navigate('EditTask')}/>
           <Icon name="delete" size={20} color={COLORS.primary} />
           <Icon name="checkcircleo" size={20} color={COLORS.primary} />
         </View>

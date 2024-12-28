@@ -71,6 +71,7 @@ const Bottom = () => {
               color={color}
             />
           ),
+          headerStyle:{backgroundColor:COLORS.primary}
         }}
       />
     </Tab.Navigator>

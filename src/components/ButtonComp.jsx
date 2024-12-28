@@ -1,5 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
+import { COLORS } from '../styles/colors'
 
 const ButtonComp = ({ title, onPress }) => {
   return (
@@ -17,7 +18,7 @@ export default ButtonComp
 
 const styles = StyleSheet.create({
     buttonBox: {
-        backgroundColor: 'red',
+        backgroundColor: COLORS.primary,
         paddingVertical: 16, 
         paddingHorizontal: 24, 
         borderRadius: 8,

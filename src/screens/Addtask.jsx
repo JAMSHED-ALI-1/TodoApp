@@ -3,15 +3,18 @@ import React from 'react';
 import Header from '../components/Header';
 import TextinputComp from '../components/TextinputComp';
 import ButtonComp from '../components/ButtonComp';
+import fontFamily from '../styles/fontFamily'
 
-const Addtask = ({navigation}) => {
+const Addtask = ({}) => {
   return (
-    <View style={{flex: 1}}>
-      <Header title="Add Task" onpressBack={() => navigation.goBack()} />
-
+    <View style={{flex: 1,paddingHorizontal:18}}>
+      
       <TextinputComp placeholder={'Title'} />
       <TextinputComp placeholder={'Detail'} />
       <ButtonComp title={'ADD'} />
+    <View>
+    
+    </View>
     </View>
   );
 };

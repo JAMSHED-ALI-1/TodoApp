@@ -2,10 +2,11 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import TasksList from '../components/TasksList';
 
-const Completed = () => {
+const Completed = ({navigation}) => {
   return (
     <View style={{flex: 1}}>
       <TasksList data={[1]} viewOnly />
+    
     </View>
   );
 };

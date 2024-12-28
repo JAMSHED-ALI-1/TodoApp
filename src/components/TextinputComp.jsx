@@ -1,6 +1,7 @@
 import { StyleSheet, TextInput, View } from 'react-native'
 import React, { useState } from 'react'
 import { moderateScale } from '../styles/responsiveSize'
+import fontFamily from '../styles/fontFamily'
 
 const TextinputComp = ({ placeholder }) => {
     const [value, setValue] = useState('')
@@ -11,7 +12,7 @@ const TextinputComp = ({ placeholder }) => {
                 placeholder={placeholder}
                 style={styles.input}
                 value={value}
-                onChangeText={(text) => setValue(text)}  // Updated to handle text input correctly
+                onChangeText={(text) => setValue(text)} 
             />
         </View>
     )
@@ -29,6 +30,7 @@ const styles = StyleSheet.create({
     input: {
         flex: 1,  
         // paddingHorizontal: moderateScale(10), 
-        fontSize: moderateScale(14),  
+        fontSize: moderateScale(14), 
+        fontFamily:fontFamily.regular
     }
 })
