@@ -20,7 +20,7 @@ const Alltask = ({navigation}) => {
         color={COLORS.primary}
         size={50}
         style={{position: 'absolute', right: 20, bottom: 20}}
-        onPress={navigation.navigate('')}
+        onPress={() => navigation.navigate('addTask')}
       />
     </View>
   );
