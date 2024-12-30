@@ -10,6 +10,7 @@ import {moderateScale} from '../styles/responsiveSize';
 import {COLORS} from '../styles/colors';
 import Alltask from '../screens/Alltask';
 import Completed from '../screens/Completed';
+import fontFamily from '../styles/fontFamily';
 const Tab = createBottomTabNavigator();
 
 const Bottom = () => {
@@ -24,6 +25,7 @@ const Bottom = () => {
           color: COLORS.primary,
           paddingVertical: moderateScale(8),
           fontWeight: '500',
+          fontFamily: fontFamily.medium,
         },
         tabBarActiveTintColor: COLORS.primary,
       }}>
@@ -57,6 +59,7 @@ const Bottom = () => {
             color: COLORS.whiteColor,
             fontSize: 22,
             fontWeight: '600',
+            fontFamily: fontFamily.medium,
           },
         }}
       />
@@ -71,7 +74,15 @@ const Bottom = () => {
               color={color}
             />
           ),
-          headerStyle:{backgroundColor:COLORS.primary}
+          headerStyle: {
+            backgroundColor: COLORS.primary,
+            height: moderateScale(80),
+          },
+          headerTitleStyle: {
+            fontFamily: fontFamily.medium,
+            fontSize: 22,
+            color: COLORS.whiteColor,
+          },
         }}
       />
     </Tab.Navigator>
