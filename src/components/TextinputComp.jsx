@@ -3,9 +3,7 @@ import React, {useState} from 'react';
 import {moderateScale} from '../styles/responsiveSize';
 import fontFamily from '../styles/fontFamily';
 
-const TextinputComp = ({placeholder}) => {
-  const [value, setValue] = useState('');
-
+const TextinputComp = ({placeholder, value, onChange}) => {
   return (
     <View style={styles.container}>
       <TextInput
@@ -13,7 +11,7 @@ const TextinputComp = ({placeholder}) => {
         placeholderTextColor={'black'}
         style={styles.input}
         value={value}
-        onChangeText={text => setValue(text)}
+        onChangeText={onChange}
       />
     </View>
   );

@@ -10,9 +10,9 @@ import TasksList from '../components/TasksList';
 import {COLORS} from '../styles/colors';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-import MMKVStorage from 'react-native-mmkv-storage';
+// import MMKVStorage from 'react-native-mmkv-storage';
 
-const MMKV = new MMKVStorage.Loader().initialize();
+// const MMKV = new MMKVStorage.Loader().initialize();
 
 const Alltask = ({navigation}) => {
   return (
