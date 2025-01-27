@@ -3,7 +3,13 @@ import React, {useState} from 'react';
 import {moderateScale} from '../styles/responsiveSize';
 import fontFamily from '../styles/fontFamily';
 
-const TextinputComp = ({placeholder, value, onChange}) => {
+const TextinputComp = ({
+  placeholder,
+  value,
+  onChange,
+  multiline = false,
+  numberOfLines,
+}) => {
   return (
     <View style={styles.container}>
       <TextInput
@@ -12,6 +18,8 @@ const TextinputComp = ({placeholder, value, onChange}) => {
         style={styles.input}
         value={value}
         onChangeText={onChange}
+        multiline={multiline}
+        numberOfLines={numberOfLines}
       />
     </View>
   );

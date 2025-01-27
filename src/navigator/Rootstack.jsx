@@ -32,12 +32,12 @@ const Rootstack = () => {
           headerStyle: {
             backgroundColor: COLORS.primary,
             height: moderateScale(80),
-            headerTitleStyle: {
-              color: COLORS.whiteColor,
-              fontSize: 22,
-              fontWeight: '600',
-              fontFamily: fontFamily.bold,
-            },
+          },
+          headerTitleStyle: {
+            color: COLORS.whiteColor,
+            fontSize: 22,
+            fontWeight: '600',
+            fontFamily: fontFamily.bold,
           },
         }}
       />

@@ -6,7 +6,7 @@ import fontFamily from '../styles/fontFamily';
 const ButtonComp = ({title, onPress}) => {
   return (
     <TouchableOpacity
-      onPress={onPress}
+      onPress={() => onPress()}
       style={styles.buttonBox}
       activeOpacity={0.7} // Adds a slight opacity change when pressed
     >

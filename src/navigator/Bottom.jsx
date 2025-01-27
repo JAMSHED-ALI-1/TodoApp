@@ -1,7 +1,4 @@
 import {View, Platform, StyleSheet, Text} from 'react-native';
-import {useLinkBuilder, useTheme} from '@react-navigation/native';
-import {PlatformPressable} from '@react-navigation/elements';
-import TasksList from '../components/TasksList';
 
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -54,7 +51,7 @@ const Bottom = () => {
             backgroundColor: COLORS.primary,
             height: moderateScale(80),
           },
-          title: 'TODO APP',
+          title: 'All Task',
           headerTitleStyle: {
             color: COLORS.whiteColor,
             fontSize: 22,

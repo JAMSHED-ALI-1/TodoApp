@@ -9,8 +9,8 @@ const TasksList = ({data, viewOnly}) => {
   const renderList = ({item}) => (
     <View style={styles.iconRow}>
       <View>
-        <Text style={styles.title}>Title</Text>
-        <Text style={styles.desc}>Desc</Text>
+        <Text style={styles.title}>{item.title}</Text>
+        <Text style={styles.desc}>{item.description}</Text>
       </View>
       {viewOnly ? null : (
         <View style={{...styles.iconRow, gap: '10%'}}>
