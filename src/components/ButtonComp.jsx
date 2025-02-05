@@ -3,11 +3,12 @@ import React from 'react';
 import {COLORS} from '../styles/colors';
 import fontFamily from '../styles/fontFamily';
 
-const ButtonComp = ({title, onPress}) => {
+const ButtonComp = ({title, onPress, disable}) => {
   return (
     <TouchableOpacity
       onPress={() => onPress()}
       style={styles.buttonBox}
+      disabled={disable}
       activeOpacity={0.7} // Adds a slight opacity change when pressed
     >
       <Text style={styles.buttonText}>{title}</Text>
@@ -21,7 +22,6 @@ const styles = StyleSheet.create({
   buttonBox: {
     backgroundColor: COLORS.primary,
     paddingVertical: 12,
-    // paddingHorizontal: 24,
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',

@@ -1,4 +1,4 @@
-import {View, Platform, StyleSheet, Text} from 'react-native';
+import {StyleSheet} from 'react-native';
 
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -10,7 +10,8 @@ import Completed from '../screens/Completed';
 import fontFamily from '../styles/fontFamily';
 const Tab = createBottomTabNavigator();
 
-const Bottom = () => {
+const Bottom = ({route}) => {
+  // console.log(route.params?.key, 'Bottom routes');
   return (
     <Tab.Navigator
       screenOptions={{
@@ -28,7 +29,6 @@ const Bottom = () => {
       }}>
       <Tab.Screen
         name="All Task"
-        component={Alltask}
         options={{
           tabBarIcon: ({color, size}) => (
             <MaterialIcons
@@ -37,14 +37,12 @@ const Bottom = () => {
               color={color}
             />
           ),
-
           headerRight: () => (
             <MaterialIcons
               name="calendar-month"
               size={moderateScale(35)}
               color={COLORS.whiteColor}
               style={{marginRight: moderateScale(10)}}
-              onPress={() => alert('Search Pressed')}
             />
           ),
           headerStyle: {
@@ -58,8 +56,9 @@ const Bottom = () => {
             fontWeight: '600',
             fontFamily: fontFamily.medium,
           },
-        }}
-      />
+        }}>
+        {props => <Alltask {...props} />}
+      </Tab.Screen>
       <Tab.Screen
         name="Completed"
         component={Completed}

@@ -87,9 +87,9 @@ android {
     }
     signingConfigs {
         debug {
-            storeFile file('debug.keystore')
+            storeFile file('C:\\Users\\orange\\Desktop\\TodoApp\\android\\app\\todo.jks')
             storePassword 'android'
-            keyAlias 'androiddebugkey'
+            keyAlias 'android'
             keyPassword 'android'
         }
     }
